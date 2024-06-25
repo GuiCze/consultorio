@@ -8,7 +8,7 @@ let paciente = {
 let type;
 let att;
 let ent;
-console.log("Digite 1 para adicionar uma nova consulta ,2 para listar todas as consultas 3 para atualizar uma consulta existente ou 4 para cancelar uma consulta ");
+console.log("Escolha a opção:\n1:Adiciona uma nova consulta\n2:Lista as consultas\n3:Atualiza uma consulta\n4:Cancela uma consulta");
 process.stdin.on("data", function (data) {
     ent = data.toString().trim();
     if(!type){
@@ -46,7 +46,7 @@ process.stdin.on("data", function (data) {
             pacientes.push(paciente);
             console.log('A consulta foi marcada com sucesso');
             console.log(
-            "Digite 1 para adicionar uma nova consulta, 2 para listar todas as consultas, 3 para atualizar uma consulta existente ou 4 para cancelar uma consulta ");
+              "Escolha a opção:\n1:Adiciona uma nova consulta\n2:Lista as consultas\n3:Atualiza uma consulta\n4:Cancela uma consulta");
           paciente = {};
           type = "";
         } 
@@ -58,14 +58,13 @@ process.stdin.on("data", function (data) {
                 console.log(pacientes);
                 type='';
                 console.log(
-                    "Digite 1 para adicionar uma nova consulta, 2 para listar todas as consultas, 3 para atualizar uma consulta existente ou 4 para cancelar uma consulta ");
+                    "Escolha a opção:\n1:Adiciona uma nova consulta\n2:Lista as consultas\n3:Atualiza uma consulta\n4:Cancela uma consulta");
             }
             else if(pacientes[i].nome==ent){
               console.log('paciente encontrado',pacientes[i]);
               type='';
               console.log(
-                "Digite 1 para adicionar uma nova consulta,2 pa ra buscar um paciente pelo e-mail, 3 para atualizar uma consulta existente ou 4 para cancelar uma consulta "
-              );
+                "Escolha a opção:\n1:Adiciona uma nova consulta\n2:Lista as consultas\n3:Atualiza uma consulta\n4:Cancela uma consulta");
             }
             else{
               console.log('paciente não localizado');
@@ -93,7 +92,7 @@ process.stdin.on("data", function (data) {
                         pacientes.splice(i,1,paciente);
                         console.log('A consulta foi atualizada com sucesso');
                         console.log(
-                        "Digite 1 para adicionar uma nova consulta, 2 para listar todas as consultas, 3 para atualizar uma consulta existente ou 4 para cancelar uma consulta ");
+                          "Escolha a opção:\n1:Adiciona uma nova consulta\n2:Lista as consultas\n3:Atualiza uma consulta\n4:Cancela uma consulta");
                       paciente = {};
                       type = "";
                     } 
@@ -113,7 +112,7 @@ process.stdin.on("data", function (data) {
                     att='';
                     type='';
                     console.log(
-                        "Digite 1 para adicionar uma nova consulta, 2 para listar todas as consultas, 3 para atualizar uma consulta existente ou 4 para cancelar uma consulta ");                 
+                      "Escolha a opção:\n1:Adiciona uma nova consulta\n2:Lista as consultas\n3:Atualiza uma consulta\n4:Cancela uma consulta");                 
                 }
             }
             break;       
