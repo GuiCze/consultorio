@@ -99,6 +99,7 @@ process.stdin.on("data", function (data) {
                 }
                 else{
                   console.log('paciente não localizado');
+                  type='';
                 }} 
           break;
           case '4':
