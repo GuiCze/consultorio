@@ -80,13 +80,13 @@ process.stdin.on("data", function (data) {
                 if(pacientes[i].nome==att){
                     if(!paciente.nome) {
                         paciente.nome = ent;
-                        console.log("Digite o nome do medico\n");
+                        console.log("Medico anterior era "+pacientes[i].medico+"\nDigite o novo nome do medico");
                     } else if (!paciente.medico) {
                         paciente.medico=ent
-                        console.log("Digite a data da consulta");
+                        console.log("A data anterior anterior era "+pacientes[i].data+"\nDigite a nova data da consulta");
                     } else if (!paciente.data) {       
                       paciente.data = ent;
-                      console.log('Digite o horario da consulta');
+                      console.log("O horario anterior era "+pacientes[i].hora+'\nDigite novo horario da consulta');
                     } else if (!paciente.hora){
                         paciente.hora = ent;
                         pacientes.splice(i,1,paciente);
