@@ -27,7 +27,7 @@ process.stdin.on("data", function (data) {
                 console.log('Digite o nome do paciente que deseja buscar ou deixe vazio para listar todas as consultas');  
             }
           } else if(type=='4'){
-            console.log('Digite o nome do paciente que deseja cancelar a consulta');
+            console.log('Digite o nome dos paciente que deseja cancelar a consulta');
           }
           }
       else {switch (type) {
