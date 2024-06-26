@@ -83,7 +83,7 @@ process.stdin.on("data", function (data) {
                         console.log("Medico anterior era "+pacientes[i].medico+"\nDigite o novo nome do medico");
                     } else if (!paciente.medico) {
                         paciente.medico=ent
-                        console.log("A data anterior anterior era "+pacientes[i].data+"\nDigite a nova data da consulta");
+                        console.log("A data anterior era "+pacientes[i].data+"\nDigite a nova data da consulta");
                     } else if (!paciente.data) {       
                       paciente.data = ent;
                       console.log("O horario anterior era "+pacientes[i].hora+'\nDigite novo horario da consulta');
