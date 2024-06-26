@@ -80,7 +80,7 @@ process.stdin.on("data", function (data) {
                 if(pacientes[i].nome==att){
                     if(!paciente.nome) {
                         paciente.nome = ent;
-                        console.log("Digite o nome do medico");
+                        console.log("Digite o nome do medico\n");
                     } else if (!paciente.medico) {
                         paciente.medico=ent
                         console.log("Digite a data da consulta");
