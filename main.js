@@ -14,7 +14,7 @@ process.stdin.on("data", function (data) {
     if(!type){
           type=ent;
           if(type=='1'){
-              console.log("Digite o nome do paciente");
+              console.log("Digite o nome do ente");
           } else if(type=='3'){
               console.log('Digite o nome do paciente da consulta para atualizar');   
           } else if(type=='2'){
