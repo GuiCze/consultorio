@@ -1,12 +1,5 @@
 let pacientes = [];
-let paciente = {
-    nome: '',
-    medico: '',
-    data: '',
-    hora: '',
-}
 let type;
-let att;
 const prompt = require('prompt-sync')()
 ent = prompt()
 function registro(){
@@ -27,75 +20,61 @@ function registro(){
   
 } 
 function menu(){
-    console.log("Escolha a opção:\n1:Adiciona uma nova consulta\n2:Lista as consultas\n3:Atualiza uma consulta\n4:Cancela uma consulta");
-    let ent=prompt()
-    return ent
+    console.log("Escolha a opção:\n1:Adiciona uma nova consulta\n2:Lista as consultas\n3:Atualiza uma consulta\n4:Cancela uma consulta\n5:Para sair");
 }
-if(!type){
-    type=menu()
-    if(type=='1'){
+do{
+    menu()
+    type=prompt()
+    switch (type) {
+    case '1':
         console.log("Digite o nome do paciente");
         pacientes.push(registro())
         console.log('Consulta adicionada com sucesso');
         console.log(pacientes);
-        type='';
-        menu()
-    } else if(type=='3'){
+        break;
+    
+    case '3':
         console.log('Digite o nome do paciente da consulta para atualizar');
         ent=prompt()
         for(i=0;i<pacientes.length;i++){
-            if(pacientes[i].includes(ent)){
-                registro(ent)
+            if(pacientes[i].nome==ent){
+                pacientes.splice(i,1,registro())
                 console.log("consulta atualizada com sucesso");
-                console.log(pacientes);
-                menu()
             }
         }
 
-    } else if(type=='2'){
+    
+    case '2':
         if(pacientes.length=='0'){
             console.log("A agenda esta vazia");
             console.log('Digite 1 para adicionar uma consulta');
-            menu()
         }
         else{
-            console.log('Digite o nome do paciente que deseja buscar ou deixe vazio para listar todas as consultas');  
-        }
-    } else if(type=='4'){
-        console.log('Digite o nome dos paciente que deseja cancelar a consulta');
-    }
-}
-      else {
-    switch (type) {
-        case '2':
-        for(let i=0;i<pacientes.length;i++){
-            if(!ent){
-                console.log(pacientes);
-                menu()
-            }
-            else if(pacientes[i].nome==ent){
-              console.log('paciente encontrado',pacientes[i]);
-              menu()
-            }
-            else{
-              console.log('paciente não localizado');
-              menu()
-            }
-          } 
-          break;
-          case '4':
-            if(!att){
-                att=ent;
-            }
+            console.log('Digite o nome do paciente que deseja buscar ou deixe vazio para listar todas as consultas');
+            ent=prompt()  
             for(let i=0;i<pacientes.length;i++){
-                if(pacientes[i].nome==att){
-                    console.log("A consulta do paciente "+att+' foi deletada com sucesso');
-                    pacientes.splice(i,1)
-                    att='';
-                    type='';
-                    console.log(
-                      "Escolha a opção:\n1:Adiciona uma nova consulta\n2:Lista as consultas\n3:Atualiza uma consulta\n4:Cancela uma consulta");                 
+                if(!ent){
+                    console.log(pacientes);
                 }
+                else if(pacientes[i].nome==ent){
+                  console.log('paciente encontrado',pacientes[i]);
+                }
+                else{
+                  console.log('paciente não localizado');
+                }
+              } 
+        }
+        break;
+    
+    case '4':
+        console.log('Digite o nome dos paciente que deseja cancelar a consulta');
+        ent=prompt()
+        for(let i=0;i<pacientes.length;i++){
+            if(pacientes[i].nome==ent){
+                console.log("A consulta do paciente "+ent+' foi deletada com sucesso');
+                pacientes.splice(i,1)
             }
-            break;       
-  }};
+        break;
+        }
+}
+}while(type!=5)
